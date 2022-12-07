@@ -8,6 +8,7 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
+import { run } from './services/serviceWorkerFetchEvents';
 import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
@@ -78,3 +79,4 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+run(self);
